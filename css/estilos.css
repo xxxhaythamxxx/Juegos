@@ -1,0 +1,259 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: arial;
+}
+
+body {
+	background-image: url("../imagenes/principal.jpg");
+	background-attachment: fixed;
+
+}
+
+aside {
+
+	width: 25%;
+	height: 590px;	
+	margin: 2.5%;
+	padding-top: 20px;
+	text-align: center;
+	color: #C8C8C3;
+
+	background-color: #212120;
+	opacity: 0.9;
+	display: inline-block;
+	float: left;
+
+	border-radius: 3%;
+	
+}
+
+h1 {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	background-color: red;
+	color: white;
+}
+
+h2 {
+	text-align: center;	
+	margin-top: 20px;
+	font-size: 38px;	
+	
+}
+
+aside > form, article {
+
+	padding: 20px;
+	text-align: center;
+	display: inline-block;
+
+}
+
+article > input {
+	float: left;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+label {
+
+	display: block;
+	color: #C8C8C3;
+
+}
+
+input, button {
+
+	padding: 5px;
+	margin-top: 5px;	
+	
+	display: inline-block;	
+
+	border-radius: 5px;
+
+}
+
+select {
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 100px;
+}
+
+section {
+
+	margin: 2.5% 0 0 0;	
+	width: 67.5%;
+	height: 610px;
+
+	display: inline-block;
+	background-color: #212120;	
+	opacity: 0.9;
+
+}
+
+.main {
+	text-align: center;
+	border-radius: 3%;	
+	
+}
+
+.parte {
+	
+	background-color: black;
+	width: 90%;
+	height: 240px;	
+	margin: 20px;
+	text-align: center;
+	border-radius: 50%;
+	
+}
+
+.imag {
+	width: 120px;
+	height: 140px;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;	
+	display: inline-block;
+	float: left;	
+}
+
+.contenedor {
+	display: inline-block;
+	background-color: red;
+	float: left;
+	width: 77%;
+	height: 14%;
+	margin-left: 20px;
+	text-align: center;
+}
+
+.tit {
+	padding: 5px;
+	color: white;
+	font-weight: bold;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+
+}
+
+.descr {
+
+	
+	width: 93%;
+	height: 270%;
+	margin-top: 20px;
+	padding: 20px;
+	border-style: groove;
+}
+
+.estad, .pers  {
+	
+	display: inline-block;
+	float: left;
+	margin-top: 20px;
+	margin-right: 10px;
+	color: white;
+}
+
+.estado, .persona {
+
+	display: inline-block;	
+	margin-right: 50px;
+	float: left;
+	margin-top: 20px;
+}
+
+.crud {
+	
+	display: inline-block;
+	float: left;	
+	width: 100%;
+	height: 40px;
+
+}
+
+.crud > input {
+	display: inline-block;
+	margin: 10px 10px 0 0;
+}
+
+.buscar {
+	margin-bottom: 30px;
+}
+
+.cantidad {
+	display: block;	
+	margin-top: 30px;
+}
+
+.crud > form {
+	display: inline-block;
+}
+
+.titulo {
+	background-color: red;
+	margin-top: 20px;
+}
+
+.formeditar > input, .formeditar > label {
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.formeditar {
+	text-align: center;	
+	width: 80%;
+	display: inline-block;
+	margin-top: 30px;
+}
+
+.botac {
+	display: block;
+}
+
+textarea {
+	width: 300px;
+	height: 100px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.formdesc {
+	display: inline-block;	
+}
+
+a {
+	text-decoration: none;
+	color: red;
+}
+
+.aviso {
+	margin-top: 40px;
+	margin-bottom: 20px;	
+	font-size: 30px;
+	color: red;
+}
+
+.indicador {
+	font-weight: bold;
+	display: inline-block;
+	width: 100%;
+	color: red;
+}
+
+.valorind{
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.actualizados {
+	margin-top: 20px;
+}
+
+.simple {
+	display: inline-block;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Principal</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">	
+</head>
+
+<?php 
+	include "conex.php";
+ ?>
+
+<header>
+
+	<h2><a href="main.php">Base de datos para mantener el control de los videojuegos</a></h2>
+	
+</header>
+
+<body>
+
+	<aside>
+
+		<?php 
+
+			$nombre = ($_REQUEST['nombre']);
+			$consola = ($_REQUEST['consola']);
+			$genero = ($_REQUEST['genero']);			
+			$aux = ($_REQUEST['estado']);
+			if($aux=="Libre")
+				$estado=0;
+			else
+				$estado=1;
+			$persona = ($_REQUEST['persona']);
+			$descripcion = ($_REQUEST['descripcion']);
+			$portada = ($_REQUEST['portada']);
+
+			$crear =  mysqli_query($conexion, "INSERT INTO juegos 
+			(nombre,consola,genero,estado,persona,descripcion,portada) VALUES 
+			('$nombre','$consola','$genero',$estado,'$persona','$descripcion','$portada')
+			") or die("Algo salió mal");
+			
+		?>
+
+		<h1>Buscador</h1>
+		
+		<form method="get" action="buscar.php">
+			
+			<label class="indicador">Título</label><input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre">
+			<input class="buscar" id="buscar" type="submit" value="Buscar" >					 
+
+			    <label class="indicador">Consola:</label>			  
+
+			    <select name="consola">
+
+			    	<option></option>
+
+			    	<?php 
+
+			    	while ($columna = mysqli_fetch_array( $consolas ))
+					{
+				    	echo "<option>".$columna['consola']."</option>";						
+				    }
+
+			    	?>
+
+			    </select>			 
+
+			  <input type="submit" value="Consultar">			 
+
+			    <label class="indicador">Género:</label>			  
+
+			    <select name="genero">
+
+			    	<option></option>
+
+			    	<?php 
+
+			    	while ($columna = mysqli_fetch_array( $generos ))
+					{
+				    	echo "<option>".$columna['genero']."</option>";						
+				    }
+
+			    	?>
+
+			    </select>			 
+
+			  <input type="submit" value="Consultar">
+
+				<input type="submit" value="Prestados" style="margin-top: 10px;">
+
+			</form>			
+
+			<form method="get" action="nuevo.php" class="simple" style="margin: 0px; padding: 0px;">
+				<input type="submit" value="Nuevo">
+			</form>
+
+		</article>		
+
+	</aside>	
+
+	<section class="main" id="main">
+
+		<div class="titulo">
+
+			<?php				
+
+				echo "
+				<label class='tit' >".$nombre."</label>
+			";
+
+			?>
+
+		</div>
+
+		<?php
+
+		echo "
+		<div class='actualizados'>
+			<label class='indicador'>Nombre:<label class='valorind'>".$nombre."</label></label>
+			<label class='indicador'>Consola:<label class='valorind'>".$consola."</label></label>
+			<label class='indicador'>Genero:<label class='valorind'>".$genero."</label></label>
+			<label class='indicador'>Estado:<label class='valorind'>".$estado."</label></label>
+			<label class='indicador'>Persona:<label class='valorind'>".$persona."</label></label>
+			<label class='indicador'>Descripción:<label class='valorind'>".$descripcion."</label></label></label>
+			<label class='indicador'>Portada:<label class='valorind'>".$portada."</label></label>
+		</div>
+		";
+		?>
+
+			<label class="aviso">Base de datos actualizada</label>
+	
+	</section>
+
+</body>
+
+</html>
