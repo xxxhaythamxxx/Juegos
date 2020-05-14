@@ -82,8 +82,14 @@
 
 			    </select>			 
 
-			  <input type="submit" value="Consultar">
+			 <input type="submit" value="Consultar">
 
+				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;">
+
+			</form>			
+
+			<form method="get" action="nuevo.php" class="simple2" style="" accept-charset="UTF-8">
+				<input type="submit" value="Nuevo">
 			</form>
 
 		<article>

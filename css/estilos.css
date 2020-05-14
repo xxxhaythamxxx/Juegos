@@ -256,4 +256,20 @@ a {
 
 .simple {
 	display: inline-block;
+	background-color: yellow;
+}
+
+.fin {
+	display: block;
+	margin: 0;	
+	margin-left: 18%;
+	margin-top: 20px;
+}
+
+.simple2 {
+	margin: 0;
+	padding: 0;
+	margin-left: 23%;
+	display: inline-block;
+	float: left;
 }
