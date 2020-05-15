@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Principal</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">	
 </head>
@@ -86,7 +87,7 @@
 
 			 <input type="submit" value="Consultar">
 
-				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;">
+				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;"  name="prestados">
 
 			</form>			
 

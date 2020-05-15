@@ -30,7 +30,6 @@
 			<input class="buscar" id="buscar" type="submit" value="Buscar" >
 		
 				
-			<form method="get" action="buscar.php" accept-charset="UTF-8">			 
 
 			    <label class="indicador">Consola:</label>			  
 
@@ -70,7 +69,7 @@
 
 			  <input type="submit" value="Consultar">
 
-				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;">
+				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;"  name="prestados">
 
 			</form>			
 

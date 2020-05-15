@@ -22,14 +22,16 @@
 
 		<?php 
 
-			$busqueda = ($_REQUEST['nombreoriginal']);
+			$busqueda = ($_REQUEST['nombreoriginal']);			
 
 			$conseguido = mysqli_query($conexion, "SELECT * FROM `juegos` WHERE nombre LIKE '$busqueda'") or die("Algo salió mal");
 
 			$nombreoriginal = ($_REQUEST['nombreoriginal']);
 			$nombre = ($_REQUEST['nombre']);
 			$consola = ($_REQUEST['consola']);
-			$genero = ($_REQUEST['genero']);			
+			$genero = ($_REQUEST['genero']);	
+			$estado = ($_REQUEST['estado']);	
+			$persona = ($_REQUEST['persona']);
 			$descripcion = ($_REQUEST['descripcion']);
 			$portada = ($_REQUEST['portada']);
 
@@ -37,6 +39,8 @@
 			nombre='$nombre',
 			consola='$consola',
 			genero='$genero',
+			estado=$estado,
+			persona='$persona',
 			descripcion='$descripcion',
 			portada='$portada' 
 			WHERE nombre LIKE '$nombreoriginal'") or die("Algo salió mal");
@@ -88,7 +92,7 @@
 
 			 <input type="submit" value="Consultar">
 
-				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;">
+				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;"  name="prestados">
 
 			</form>			
 

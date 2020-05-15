@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Principal</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">	
 </head>
@@ -73,7 +74,7 @@
 
 			 <input type="submit" value="Consultar">
 
-				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;">
+				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;"  name="prestados">
 
 			</form>			
 
@@ -129,6 +130,7 @@
 			<label class='indicador'>Nombre:<input class='valorind' value='".$columna["nombre"]."' type='text' name='nombre'></label>
 			<label class='indicador'>Consola:<input class='valorind' value='".$columna["consola"]."' type='text' name='consola'></label>
 			<label class='indicador'>Genero:<input class='valorind' value='".$columna["genero"]."' type='text' name='genero'></label>
+			<input type='hidden' value=".$columna["estado"]." name='estado'>
 			<label>".$persona."<input class='valorind' value='".$columna["persona"]."' type='".$tipo."' name='persona'></label>
 			<label class='indicador'>Descripción:<textarea class='valorind' value='".$columna["descripcion"]."' type='text' name='descripcion'>".$columna["descripcion"]."</textarea></label>
 			<label class='indicador'>Portada:<input class='valorind' value='".$columna["portada"]."' type='text' name='portada'></label>

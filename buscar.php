@@ -23,13 +23,17 @@
 
 		<?php 
 
+			error_reporting(E_ALL ^ E_NOTICE);
+
 			$busqueda = strtolower($_REQUEST['nombre']);
 
 			$busconsola = strtolower($_REQUEST['consola']);
 
 			$busgenero = ($_REQUEST['genero']);
 
-			if(empty($busqueda) && empty($busconsola) && empty($busgenero)){
+			$busprestados = strtolower($_REQUEST['prestados']);
+
+			if(empty($busqueda) && empty($busconsola) && empty($busgenero) && empty($busprestados)){
 				header("location: main.php");
 			}
 		
@@ -47,6 +51,11 @@
 			$conseguido = mysqli_query($conexion, "SELECT * FROM `juegos` WHERE genero LIKE '$busgenero'") or die("Algo salió mal");	
 
 			$cant = mysqli_query($conexion, "SELECT COUNT(*) FROM `juegos` WHERE genero LIKE '%$busgenero%'") or die("Algo salió mal");
+		}
+		if($busprestados){
+			$conseguido = mysqli_query($conexion, "SELECT * FROM `juegos` WHERE estado = '1'") or die("Algo salió mal");
+
+			$cant = mysqli_query($conexion, "SELECT COUNT(*) FROM `juegos` WHERE estado = '1'") or die("Algo salió mal");
 		}
 
 		$cantidad = mysqli_fetch_array($cant);
@@ -98,7 +107,7 @@
 
 			  <input type="submit" value="Consultar">
 
-				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;">
+				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;"  name="prestados">
 
 			</form>			
 

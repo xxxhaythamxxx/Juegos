@@ -24,13 +24,26 @@
 
 			$busqueda = strtolower($_REQUEST['accionprestamo']);
 			$nombre = ($_REQUEST['nombre']);
-			$accion = strtolower ($_REQUEST['accionprestamo']);
+			$nombreoriginal = $nombre;
+			/*$nombreoriginal = $nombre;*/
 
 			$conseguido = mysqli_query($conexion, "SELECT * FROM `juegos` WHERE nombre LIKE '$nombre'") or die("Algo salió mal");
-
+/*
 			echo "Nombre: ".$nombre;
 			echo "Accion: ".$accion;
-
+*/
+			$columna = mysqli_fetch_array( $conseguido);
+			
+			$consola = ($columna['consola']);
+			$genero = ($columna['genero']);
+			$aux = strtolower($columna['estado']);
+			if($aux=="libre")
+				$estado=0;
+			else
+				$estado=1;
+			$persona = ($columna['persona']);
+			$descripcion = ($columna['descripcion']);
+			$portada = ($columna['portada']);
 		?>
 
 		<h1>Buscador</h1>
@@ -78,7 +91,7 @@
 
 			  <input type="submit" value="Consultar">
 
-				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;">
+				<input class="fin" type="submit" value="Prestados" style="margin-top: 10px;"  name="prestados">
 
 			</form>			
 
@@ -94,12 +107,10 @@
 
 		<div class="titulo">
 
-			<?php
-
-			$columna = mysqli_fetch_array( $conseguido);
+			<?php			
 
 			echo "
-				<label class='tit' >".$columna["nombre"]."</label>
+				<label class='tit' >".$nombre."</label>
 			"; 
 
 			
@@ -128,17 +139,38 @@
 		}
 		$nomaux = $columna["nombre"];
 
-		echo "
+		if($busqueda=='prestar'){
 
-			<input value='".$nomaux."' type='hidden' name='nombreoriginal'>
-			<label class='indicador'>Nombre:<input class='valorind' value='".$columna["nombre"]."' type='text' name='nombre'></label>
-			<label class='indicador'>Consola:<input class='valorind' value='".$columna["consola"]."' type='text' name='consola'></label>
-			<label class='indicador'>Genero:<input class='valorind' value='".$columna["genero"]."' type='text' name='genero'></label>
-			<label>".$persona."<input class='valorind' value='".$columna["persona"]."' type='".$tipo."' name='persona'></label>
-			<label class='indicador'>Descripción:<textarea class='valorind' value='".$columna["descripcion"]."' type='text' name='descripcion'>".$columna["descripcion"]."</textarea></label>
-			<label class='indicador'>Portada:<input class='valorind' value='".$columna["portada"]."' type='text' name='portada'></label>
+			echo "
+
+			<label class='indicador'>Ingrese nombre de la persona: </label>
+			<input type='text' name='persona' placeholder='Ingrese nombre'>
+			<input type='hidden' name='estado' value=1>
 
 			";
+
+		}else{
+
+			echo "
+
+			<label class='indicador'>Se cambiará el estado del juego a Libre</label>
+			<input type='hidden' name='persona' value=''>
+			<input type='hidden' name='estado' value=0>
+
+			";
+
+		}
+
+		echo "
+
+			<input type='hidden' name='nombreoriginal' value='".$nombreoriginal."'>
+			<input type='hidden' name='nombre' value='".$nombre."'>
+			<input type='hidden' name='consola' value='".$consola."'>
+			<input type='hidden' name='genero' value='".$genero."'>
+			<input type='hidden' name='descripcion' value='".$descripcion."'>
+			<input type='hidden' name='portada' value='".$portada."'>
+
+		";		
 
 		?>
 
