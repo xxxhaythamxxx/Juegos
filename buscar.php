@@ -146,6 +146,8 @@
 		$tam=120;
 	if($columna["consola"]=="3DS")
 		$tam=120;	
+	if($columna["consola"]=="GBA")
+		$tam=120;	
 
 	echo "	
 
